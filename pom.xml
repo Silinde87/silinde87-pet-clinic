@@ -49,6 +49,7 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/Silinde87/silinde87-pet-clinic.git</developerConnection>
+        <tag>HEAD</tag>
     </scm>
 
 </project>
