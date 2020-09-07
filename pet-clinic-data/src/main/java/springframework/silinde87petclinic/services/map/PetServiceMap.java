@@ -1,11 +1,11 @@
 package springframework.silinde87petclinic.services.map;
 
 import springframework.silinde87petclinic.model.Pet;
-import springframework.silinde87petclinic.services.CrudService;
+import springframework.silinde87petclinic.services.PetService;
 
 import java.util.Set;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
     @Override
     public Set<Pet> findAll() {
         return super.findAll();
