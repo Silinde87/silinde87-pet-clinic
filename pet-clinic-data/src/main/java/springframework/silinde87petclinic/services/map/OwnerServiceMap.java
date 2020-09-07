@@ -1,10 +1,12 @@
 package springframework.silinde87petclinic.services.map;
 
+import org.springframework.stereotype.Service;
 import springframework.silinde87petclinic.model.Owner;
 import springframework.silinde87petclinic.services.OwnerService;
 
 import java.util.Set;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
     @Override
     public Set<Owner> findAll() {
@@ -22,16 +24,10 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
     }
 
     @Override
-    public void delete(Owner object) {
-        super.delete(object);
-
-    }
+    public void delete(Owner object) { super.delete(object); }
 
     @Override
-    public void deleteById(Long id) {
-        super.deleteById(id);
-
-    }
+    public void deleteById(Long id) { super.deleteById(id); }
 
     @Override
     public Owner findByLastName(String lastName) {
