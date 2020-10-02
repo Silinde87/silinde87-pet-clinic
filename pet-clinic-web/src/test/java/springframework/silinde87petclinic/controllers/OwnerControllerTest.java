@@ -14,7 +14,8 @@ import springframework.silinde87petclinic.services.OwnerService;
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.*;
+import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -70,5 +71,15 @@ class OwnerControllerTest {
         mockMvc.perform(get("/owners/find"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("notimplemented"));
+    }
+
+    @Test
+    void displayOwner() throws Exception{
+        when(ownerService.findById(anyLong())).thenReturn(Owner.builder().id(1L).build());
+
+        mockMvc.perform(get("/owners/123"))
+                .andExpect(status().isOk())         //Expecting ok http status 200.
+                .andExpect(view().name("owners/ownerDetails"))         //What is returning the method.
+                .andExpect(model().attribute("owner", hasProperty("id", is(1L))));     //Which is not null
     }
 }

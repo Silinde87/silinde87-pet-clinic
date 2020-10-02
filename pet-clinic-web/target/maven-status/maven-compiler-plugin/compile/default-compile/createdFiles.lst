@@ -1,0 +1,5 @@
+springframework\silinde87petclinic\Silinde87PetClinicApplication.class
+springframework\silinde87petclinic\controllers\IndexController.class
+springframework\silinde87petclinic\controllers\OwnerController.class
+springframework\silinde87petclinic\bootstrap\DataLoader.class
+springframework\silinde87petclinic\controllers\VetController.class
