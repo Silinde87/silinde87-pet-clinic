@@ -22,7 +22,7 @@ public class Owner extends Person{
         this.city = city;
         this.telephone = telephone;
 
-        if(pets != null){
+        if(pets != null) {
             this.pets = pets;
         }
     }
@@ -39,7 +39,7 @@ public class Owner extends Person{
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private Set<Pet> pets = new HashSet<>();
 
-    public Pet getPet(String name){
+    public Pet getPet(String name) {
         return getPet(name, false);
     }
 
