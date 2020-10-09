@@ -30,9 +30,8 @@ public class VetController {
         return "vets/index";
     }
 
-    @GetMapping("/api/vets")
-    public @ResponseBody
-    Set<Vet> getVetsJson(){
+    @GetMapping({"/api/vets", "/api/vets.html"})
+    public @ResponseBody Set<Vet> getVetsJson(){
 
         return vetService.findAll();
     }
